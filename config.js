@@ -1,7 +1,6 @@
 const config = {
-  appMainBoaard: 'appl07xmiRxXCUJ7g',
-  noctem: 'tblEA4dosfeIV25lR',
-  dieuDuCiel: 'tblTF4RUeHk8iFzfc'
+  noctemView: 'tblEA4dosfeIV25lR',
+  dieuDuCielView: 'tblTF4RUeHk8iFzfc'
 }
 
 module.exports = config;

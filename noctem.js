@@ -10,9 +10,9 @@ async function sendData(dataToSend) {
 
     // To avoid rate limiting on API
     await new Promise((resolve) => setTimeout(resolve, 2000));
-
+    
     const response = await fetch(
-      `https://api.airtable.com/v0/${config.appMainBoaard}/${config.noctem}`,
+      `https://api.airtable.com/v0/${process.env.AIRTABLE_BOARD_KEY}/${config.noctemView}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,

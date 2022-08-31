@@ -9,7 +9,7 @@ async function sendData(dataToSend) {
     const splittedData = dataToSend.splice(0, 10);
 
     const response = await fetch(
-      `https://api.airtable.com/v0/${config.appMainBoaard}/${config.dieuDuCiel}`,
+      `https://api.airtable.com/v0/${process.env.AIRTABLE_BOARD_KEY}/${config.dieuDuCielView}`,
       {
         headers: {
           Authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
