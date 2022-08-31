@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node -r dotenv/config index.js"
+    "noctem": "node -r dotenv/config noctem.js",
+    "dieuduciel": "node -r dotenv/config dieuduciel.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.2",
+    "node-cron": "^3.0.2",
     "node-fetch": "^2.6.7",
     "puppeteer": "^17.0.0"
   }
