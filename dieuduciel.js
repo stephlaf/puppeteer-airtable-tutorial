@@ -1,46 +1,30 @@
-require('dotenv')
-
+require('dotenv').config()
 const puppeteer = require("puppeteer");
-const fetch = require("node-fetch");
-const config = require("./config");
-
-// import { AIRTABLE_API_KEY } from './key.js'
-// import { AIRTABLE_BOARD_KEY } from './key.js'
 
 const Airtable = require('airtable');
-var base = new Airtable({ apiKey: 'XXXX' }).base('XXXX');
+var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(process.env.AIRTABLE_BOARD_KEY);
 
 async function sendData(beerObjects) {
-  // console.log('From sendData', beerObjects);
   if (beerObjects.length > 0) {
-    const splicedData = beerObjects.splice(0, 10);
-
-    console.log('splicedData: ', splicedData);
-
-    splicedData.forEach((beer) => {
-      console.log(beer);
+    beerObjects.forEach((beer) => {
+      console.log(beer.fields.name);
       base('Table 1').create([beer], function(err, records) {
         if (err) {
           console.error(err);
           return;
         }
-        records.forEach(function (record) {
+        records.forEach((record) => {
           console.log(`Beer with ID ${record.getId()} was created`);
         });
       });
     })
-
-    // To avoid reaching rate limiting on API
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-
-    return sendData(beerObjects);
   }
 
   return null;
 }
 
 (async () => {
-  const browser = await puppeteer.launch({ headless: false,  args: [`--window-size=850,1080`] });
+  const browser = await puppeteer.launch({ headless: true,  args: [`--window-size=850,1080`] });
   const page = await browser.newPage();
 
   await page.goto("https://dieuduciel.com/categories/bouteille-canette/", {
@@ -53,12 +37,13 @@ async function sendData(beerObjects) {
     const elements = document.querySelectorAll('.bieres__biere a');
     const beerLinks = Array.from(elements)
 
+    // for (const link of beerLinks.slice(0, 20)) {
     for (const link of beerLinks) {
-      link.click();
+      await link.click();
 
       /* Not perfect I think it's doable to wait for network response,
         don't know how to do it at the time */
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const beer_infos = document.querySelector('.biere__header-container')
       const imageUrl = beer_infos.querySelector('.biere__img img').src
