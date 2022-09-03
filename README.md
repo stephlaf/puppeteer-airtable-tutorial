@@ -1,4 +1,4 @@
-# Tutorial to scrape using Puppeteer and store to Airtable
+# Tutorial to scrape using Puppeteer and store to Airtable #
 
 # Setup
 
