@@ -56,14 +56,12 @@ async function writeToAirtable(beerObjects) {
 
       // Store the infos Object in the Array
       beersArray.push({
-        // fields: {
-          name: name,
-          description: description,
-          image_url: imageUrl,
-          category: category,
-          type: type,
-          alcohol: alcohol,
-        // }
+        name: name,
+        description: description,
+        image_url: imageUrl,
+        category: category,
+        type: type,
+        alcohol: alcohol
       });
     }
     // Once the loop is over, return the Array
