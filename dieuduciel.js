@@ -38,7 +38,7 @@ const writeToAirtable = async (beerObjects) => {
 
     // Loop over the Array
     for (let link of beerLinksArray.slice(0, 2)) {
-    // for (let link of beerLinks) {
+    // for (let link of beerLinksArray) {
 
       // click on the link
       await link.click();
