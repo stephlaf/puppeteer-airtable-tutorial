@@ -1,6 +1,6 @@
-## Tutorial to scrape using Puppeteer and store to Airtable
+# Tutorial to scrape using Puppeteer and store to Airtable
 
-# Setup
+## Setup
 
 ```
 yarn add puppeteer
@@ -26,7 +26,7 @@ category
 type
 alcohol
 ```
-# Usage
+## Usage
 
 Run the program with `node dieuduciel.js`
 See all the imported data appear in your Airtable board 😃
