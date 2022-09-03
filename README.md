@@ -15,7 +15,7 @@ AIRTABLE_API_KEY='your_api_key'
 AIRTABLE_BOARD_KEY='your_board_key'
 ```
 
-The board columns (all as Single text line, except for `description`, which is Long text).
+The board columns (all as Single text line, except for `description`, which is `Long text`, and `image_url`, which is `URL`).
 The columns must be defined as:
 
 ```
