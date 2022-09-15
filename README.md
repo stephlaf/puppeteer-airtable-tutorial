@@ -1,4 +1,4 @@
-# Tutorial to scrape using Puppeteer and store to Airtable #
+# Tutorial to scrape the web using Puppeteer and store to Airtable #
 
 ## Setup ##
 
@@ -35,3 +35,5 @@ alcohol
 
 Run the program with `node dieuduciel.js`\
 See all the imported data appear in your Airtable board 😃
+
+Big thanks to [@jeremiebardon](https://github.com/jeremiebardon) for his help 🙏🏻
