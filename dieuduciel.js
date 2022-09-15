@@ -18,7 +18,7 @@ const writeToAirtable = async (beerObjects) => {
   })
 }
 
-(async () => {
+const beerObjects = (async () => {
   const browser = await puppeteer.launch({ headless: true,  args: [`--window-size=850,1080`] });
   const page = await browser.newPage();
 
@@ -37,7 +37,7 @@ const writeToAirtable = async (beerObjects) => {
     const beerLinksArray = Array.from(beerLinks)
 
     // Loop over the Array
-    for (let link of beerLinksArray.slice(0, 2)) {
+    for (let link of beerLinksArray) {
     // for (let link of beerLinksArray) {
 
       // click on the link
