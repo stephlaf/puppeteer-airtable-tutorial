@@ -38,7 +38,6 @@ const beerObjects = (async () => {
 
     // Loop over the Array
     for (let link of beerLinksArray) {
-    // for (let link of beerLinksArray) {
 
       // click on the link
       await link.click();
